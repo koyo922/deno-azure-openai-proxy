@@ -7,9 +7,7 @@ const resourceName:string = 'study-apikey-1';
 const apiVersion:string = '2024-06-01';
 // The mapping of model name.
 const mapper:any = {
-  'gpt-4': Deno.env.get("DEPLOY_NAME_GPT4"),
-  'gpt-4o': 'apikey',
-  'dall-e-3': typeof Deno.env.get("DEPLOY_NAME_DALLE3") !== 'undefined' ? Deno.env.get("DEPLOY_NAME_DALLE3") : "dalle3",
+  'gpt-4o-azure': 'apikey',
   // Other mapping rules can be added here.
 };
 
