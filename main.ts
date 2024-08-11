@@ -2,21 +2,13 @@ import { serve } from "https://deno.land/std@0.181.0/http/server.ts";
 import { pooledMap } from "https://deno.land/std@0.182.0/async/pool.ts";
 
 // The name of your Azure OpenAI Resource.
-const resourceName:string = Deno.env.get("RESOURCE_NAME");
+const resourceName:string = 'study-apikey-1';
 // The version of OpenAI API.
-const apiVersion:string = Deno.env.get("API_VERSION");
+const apiVersion:string = '2024-06-01';
 // The mapping of model name.
 const mapper:any = {
-  'gpt-3.5-turbo': Deno.env.get("DEPLOY_NAME_GPT35"),
-  'gpt-3.5-turbo-0613': Deno.env.get("DEPLOY_NAME_GPT35"),
-  'gpt-3.5-turbo-1106': Deno.env.get("DEPLOY_NAME_GPT35"),
-  'gpt-3.5-turbo-16k': Deno.env.get("DEPLOY_NAME_GPT35_16k"),
   'gpt-4': Deno.env.get("DEPLOY_NAME_GPT4"),
-  'gpt-4-32k': Deno.env.get("DEPLOY_NAME_GPT4_32k"),
-  'gpt-4-0613': Deno.env.get("DEPLOY_NAME_GPT4"),
-  'gpt-4-1106-preview': Deno.env.get("DEPLOY_NAME_GPT4"),
-  'gpt-4-0125-preview': Deno.env.get("DEPLOY_NAME_GPT4"),
-  'gpt-4-vision-preview': Deno.env.get("DEPLOY_NAME_GPT4V"),
+  'gpt-4o': 'apikey',
   'dall-e-3': typeof Deno.env.get("DEPLOY_NAME_DALLE3") !== 'undefined' ? Deno.env.get("DEPLOY_NAME_DALLE3") : "dalle3",
   // Other mapping rules can be added here.
 };
